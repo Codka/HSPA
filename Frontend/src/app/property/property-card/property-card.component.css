@@ -1,0 +1,34 @@
+.car-img-wrapper{
+    overflow: hidden;
+    position: relative; /*for button icons*/
+}
+.card:hover img{
+    transform: scale(1.2,1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: .5;
+}
+
+.card img{
+    transform: scale(1,1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+.member-icon{
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    opacity: 0;
+}
+
+.car-img-wrapper:hover .member-icon{
+    bottom: 0;
+    opacity: 1;
+}
+.animate{
+    transition: all 0.3s ease-in-out;
+}
