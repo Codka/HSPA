@@ -1,36 +1,47 @@
 [
     {
       "Id":101,
+      "SellRent":2,
       "Name":"Omar House",
       "Type":"House",
-      "Price":12000
+      "Price":12000,
+      "Image":"img-1.png"
     },
     {
       "Id":102,
+      "SellRent":1,
       "Name":"Ali House",
       "Type":"House",
-      "Price":13000
+      "Price":13000,
+      "Image":"img-2.png"
     },
     {
       "Id":103,
+      "SellRent":2,
       "Name":"Ahmed House",
       "Type":"House",
-      "Price":14000
+      "Price":14000,
+      "Image":"img-3.png"
     },
     {
       "Id":104,
+      "SellRent":1,
       "Name":"Jama House",
       "Type":"House",
-      "Price":15000
+      "Price":15000,
+      "Image":"img-4.png"
     },
     {
       "Id":105,
+      "SellRent":1,
       "Name":"Hodan House",
       "Type":"House",
-      "Price":16000
+      "Price":16000,
+      "Image":"img-5.png"
     },
     {
       "Id":105,
+      "SellRent":1,
       "Name":"Hirsi House",
       "Type":"House",
       "Price":17000

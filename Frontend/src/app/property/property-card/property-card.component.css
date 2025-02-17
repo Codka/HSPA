@@ -1,6 +1,7 @@
 .car-img-wrapper{
     overflow: hidden;
     position: relative; /*for button icons*/
+    min-height: 350px;
 }
 .card:hover img{
     transform: scale(1.2,1.2);
@@ -13,6 +14,7 @@
     transform: scale(1,1);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
+    height: 350px;
 }
 .member-icon{
     position: absolute;
