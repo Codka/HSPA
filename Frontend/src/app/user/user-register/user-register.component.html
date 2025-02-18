@@ -29,7 +29,7 @@
 
         <div class="mb-3 col-12">
           <label for="password" class="form-label">Password</label>
-          <input type="text" class="form-control" formControlName="password">
+          <input type="password" class="form-control" formControlName="password">
           <span class="error-block" *ngIf="!password.valid && password.touched">
             <span *ngIf="password.errors['required']">
               Please provide password!
@@ -42,7 +42,7 @@
 
         <div class="mb-3 col-12">
           <label for="confirmPassword" class="form-label">Confirm Password</label>
-          <input type="text" class="form-control" formControlName="confirmPassword">
+          <input type="password" class="form-control" formControlName="confirmPassword">
           <span class="error-block" *ngIf="!confirmPassword.valid && confirmPassword.touched">
               Please confirm password!
           </span>
