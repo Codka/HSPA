@@ -1,0 +1,18 @@
+.photo-control{
+    min-height: 300px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px dashed blue;
+    margin: 5px;
+    
+}
+
+.btn-group > label[ng-reflect-btn-radio]:first-child {
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+  }
+  
+  .btn-group > label[ng-reflect-btn-radio]:last-child {
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+  }
