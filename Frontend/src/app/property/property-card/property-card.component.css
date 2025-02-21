@@ -1,4 +1,7 @@
-.car-img-wrapper{
+.card{
+    min-height: 400px;
+}
+.card-img-wrapper{
     overflow: hidden;
     position: relative; /*for button icons*/
     min-height: 350px;
@@ -27,7 +30,7 @@
     opacity: 0;
 }
 
-.car-img-wrapper:hover .member-icon{
+.card-img-wrapper:hover .member-icon{
     bottom: 0;
     opacity: 1;
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { IProperty } from "../IProperty.Interface";
+import { IProperty } from "src/app/model/iproperty";
 
 @Component(
 {
@@ -12,5 +12,6 @@ import { IProperty } from "../IProperty.Interface";
 
 )
 export class PropertCardComponent{
-    @Input() property: IProperty
+    @Input() property: IProperty;
+    @Input() hideIcons:boolean = false;
 }

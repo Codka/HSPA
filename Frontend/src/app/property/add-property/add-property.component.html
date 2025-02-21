@@ -1,13 +1,13 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>List Your Property</h3>
       </div>
       <div class="card-body">
         <form (ngSubmit)="onSubmit()" #Form="ngForm">
-          <div>
-            <tabset #formTabs>
+          <div class="tab-panel">
+            <tabset class="member-tabset" #formTabs>
               <tab heading="Basic Details">
                 <div class="form-group col-12">
                   <p>I want to</p>
@@ -29,7 +29,7 @@
 
                   <div class="form-group col-12">
                     <p>Property Type</p>
-                    <div class="btn-group" btnRadioGroup>
+                    <div class="btn-group" btnRadioGroup name="propType" [(ngModel)]="propertyView.PType">
                     <label 
                     *ngFor="let pType of propertyTypes"
                     class="btn btn-sm btn-outline-primary mr-2" [btnRadio]="pType"
@@ -53,7 +53,8 @@
                     #propName="ngModel"
                     ngModel name="Name"
                     required
-                    minlength="5">
+                    minlength="5"
+                    [(ngModel)]="propertyView.Name">
                     <span *ngIf="!propName.valid && propName.touched" class="error-block">
                       <span *ngIf="propName.errors.required">Please provide name</span>
                       <span *ngIf="propName.errors.minlength">Name must be atleast 5 char long</span>
@@ -73,7 +74,7 @@
               <tab heading="Pricing">
                 <div class="form-group col-12">
                   <label>Price (in USD)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="price" [(ngModel)]="propertyView.Price">
                 </div>
 
                 <div class="form-group col-12">
@@ -213,14 +214,12 @@
     </div>
   </div>
 <div class="col-4">
-  <div class="card">
     <div class="card-header">
         <h3>Your Property Preview</h3>
     </div>
-    <div class="card-body">
-      <app-property-card [property]="propertyView"></app-property-card>
+    <div class="shadow-lg p-3 bg-white">
+       <app-property-card [property]="propertyView" [hideIcons]="true"></app-property-card>     
     </div>
-  </div>
 
-</div>
+  </div>
 </div>
