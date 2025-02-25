@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/User';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +8,15 @@ export class UserService {
 
 constructor() { }
 
-addUser(user: User){
-  let users=[];
-  //check if local storage has users
-  if(localStorage.getItem('Users')){
-    //get existing users from local storage
-    users=JSON.parse(localStorage.getItem('Users'));
-    // Add the new user to the beginning of the users array
-    users=[...users,user];
+addUser(user: User) {
+  let users = [];
+  if (localStorage.getItem('Users')) {
+    users = JSON.parse(localStorage.getItem('Users'));
+    users = [user, ...users];
+  } else {
+    users = [user];
   }
-  else{
-    users=[user];
-  }
-  //save users 
-  localStorage.setItem('Users',JSON.stringify(users));
+  localStorage.setItem('Users', JSON.stringify(users));
 }
+
 }

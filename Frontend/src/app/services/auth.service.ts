@@ -7,11 +7,12 @@ export class AuthService {
 
 constructor() { }
 
-authUser(user:any){
-  let userArray= [];
-  if(localStorage.getItem('Users')){
-    userArray=JSON.parse(localStorage.getItem('Users'));
-    return userArray.find(p => p.userName===user.userName && p.password === user.password);
+authUser(user: any) {
+  let UserArray = [];
+  if (localStorage.getItem('Users')) {
+    UserArray = JSON.parse(localStorage.getItem('Users'));
   }
+  return UserArray.find(p => p.userName === user.userName && p.password === user.password);
 }
+
 }

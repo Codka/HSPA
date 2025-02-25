@@ -9,7 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { AppComponent } from './app.component';
-import { PropertCardComponent } from './property/property-card/property-card.component';
+import { PropertyCardComponent } from './property/property-card/property-card.component';
 import { PropertyListComponent } from './property/property-list/property-list.component'
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HousingService } from './services/housing.service';
@@ -21,13 +21,18 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
+import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+
 
 const appRoutes:Routes = [
   {path:"", component:PropertyListComponent},
   {path:"property-list", component:PropertyListComponent},
   {path:"add-property", component:AddPropertyComponent},
   {path:"rent-property", component:PropertyListComponent},
-  {path:"property-detail/:id", component:PropertyDetailComponent},
+  {path:"property-detail/:id", 
+                              component:PropertyDetailComponent, 
+                              resolve:{prp:PropertyDetailResolverService}},
   {path:"user/login", component:UserLoginComponent},
   {path:"user/register", component:UserRegisterComponent},
   //if the url is not found
@@ -36,7 +41,7 @@ const appRoutes:Routes = [
 @NgModule({
   declarations: [	
     AppComponent,
-    PropertCardComponent,
+    PropertyCardComponent,
     PropertyListComponent,
     NavBarComponent,
     AddPropertyComponent,
@@ -54,13 +59,15 @@ const appRoutes:Routes = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxGalleryModule
   ],
   providers: [
     HousingService,
     UserService,
     AlertifyService,
-    AuthService
+    AuthService,
+    PropertyDetailResolverService
   ],
   bootstrap: [AppComponent]
 })
