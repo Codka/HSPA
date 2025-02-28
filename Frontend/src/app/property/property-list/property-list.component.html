@@ -1,7 +1,29 @@
+<!-- <b>{{'Malaysia datetime :'|uppercase}}</b> {{date | date:'medium':'GMT+8'|uppercase}}
+<b>{{'Somalia datetime :'|uppercase}}</b> {{date | date:'medium'|uppercase}} -->
+
 <div class="row">
-  <div *ngFor="let property of properties" class="col-sm-4">
-    <div class="shadow-lg p-3 mb-4">
-        <app-property-card [property]="property"></app-property-card>
+  <div class="col-12">
+    <span>Filter City:&nbsp;</span>
+    <input type="text" [(ngModel)]="City"/>
+    <button type="button" (click)="onCityFilter()">Search</button>
+    <button type="button" (click)="onCityFilterClear()">Clear</button>&nbsp;
+
+    <span>Sort by:&nbsp;</span>
+    <select [(ngModel)]="SortbyPram">
+      <option value="City">City</option>
+      <option value="Price">Price</option>
+    </select>
+    <button type="button" (click)="onSortDirection()">          
+      <i [ngClass]="SortDirection === 'asc' ? 'fa-solid fa-arrow-up-z-a' : 'fa-solid fa-arrow-up-a-z'"></i>
+      </button>
+  </div>
+
+    <div *ngFor="let property of properties|filter:SearchCity:'City'|sort:[SortbyPram,SortDirection]" class="col-sm-4">
+      <div class="shadow-lg p-3 mb-4">
+          <app-property-card [property]="property"></app-property-card>
+      </div>
     </div>
+
+
 </div>
-</div>
+ 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HousingService } from 'src/app/services/housing.service';
 import { ActivatedRoute } from '@angular/router';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
@@ -11,7 +11,11 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 export class PropertyListComponent implements OnInit {
   SellRent = 1;
   properties: IPropertyBase[];
-
+  date = new Date();
+  City='';
+  SearchCity='';
+  SortbyPram='';
+  SortDirection='asc';
   constructor(private route: ActivatedRoute, private housingService: HousingService) { }
 
   ngOnInit(): void {
@@ -28,5 +32,17 @@ export class PropertyListComponent implements OnInit {
       }
     );
   }
-
+  onCityFilter(){
+  this.SearchCity=this.City;
+  }
+  onCityFilterClear(){
+    this.SearchCity='';
+    this.City='';
+  }
+  onSortDirection(){
+    if(this.SortDirection==='asc')
+      this.SortDirection='desc'
+    else
+    this.SortDirection='asc'
+  }
 }
