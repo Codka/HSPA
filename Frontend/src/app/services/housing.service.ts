@@ -22,6 +22,10 @@ export class HousingService {
     );
   }
 
+  getAllCities():Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:7949/api/City');
+  }
+
   getAllProperties(SellRent?: number): Observable<Property[]> {
     return this.http.get('assets/data/properties.json').pipe(
       map(data => {
